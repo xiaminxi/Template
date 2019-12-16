@@ -2,7 +2,7 @@
  * @Author: 夏民喜
  * @Date: 2019-11-13 20:38:41
  * @LastEditors: 夏民喜
- * @LastEditTime: 2019-12-16 13:49:40
+ * @LastEditTime: 2019-12-16 22:24:22
  * @Description: webpack配置文件
  */
 const path = require("path")
@@ -10,9 +10,13 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 清除上一次打包的文件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack")
 
-module.exports = {
-    mode: "production",
+// 合并打包配置
+const merge = require('webpack-merge');
+console.log(process.env.NODE_ENV, 23232323232)
+
+const config = {
     // 打包入口
     entry: {
         app: "./src/index.js"
@@ -38,7 +42,10 @@ module.exports = {
     },
     // 插件
     plugins: [
-        new CleanWebpackPlugin({  cleanOnceBeforeBuildPatterns: ['**/*', '!color.less*'],}),
+        new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        }),
+        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ['**/*', '!color.less*'], }),
         // 创建模板
         new HtmlWebpackPlugin({
             // template: "./src/index.html",
@@ -55,7 +62,7 @@ module.exports = {
             hash: true,
             chunksSortMode: 'none' //如果使用webpack4将该配置项设置为'none'
         }),
-       
+
     ],
     // 模块----loader
     module: {
@@ -74,12 +81,6 @@ module.exports = {
                         loader: "less-loader",
                         options: {
                             javascriptEnabled: true,
-                            // // antd 主题修改
-                            // modifyVars: {
-                            //     'primary-color': '#f5222d',
-                            //     'link-color': '#1DA57A',
-                            //     'border-radius-base': '2px',
-                            // },
                         }
                     }
                 ],
@@ -116,5 +117,21 @@ module.exports = {
                 },
             },
         ]
+    }
+}
+
+
+module.exports = function (qwer) {
+    console.log(qwer, process.env.NODE_ENV)
+
+    process.hehe = "xiaminxi"
+    
+    switch (process.env.NODE_ENV) {
+        case "dev":
+            return merge({}, config, require('./webpack/dev'))
+        case "test":
+            return merge({}, config, require('./webpack/test'))
+        case "prod":
+            return merge({}, config, require('./webpack/prod'))
     }
 }

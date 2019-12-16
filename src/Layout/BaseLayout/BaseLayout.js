@@ -2,7 +2,7 @@
  * @Author: 夏民喜
  * @Date: 2019-11-14 15:21:32
  * @LastEditors: 夏民喜
- * @LastEditTime: 2019-12-05 13:38:07
+ * @LastEditTime: 2019-12-16 22:24:52
  * @Description: 基础布局文件
  */
 import classNames from 'classnames';
@@ -25,6 +25,7 @@ export default class BaseLayout extends Component {
             systemName: "审核平台",
             loading: false
         }
+        console.log(NODE_ENV,12312321)
     }
 
     componentDidMount() {
