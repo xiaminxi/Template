@@ -1,0 +1,45 @@
+{
+    "name": "template",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "node color && webpack --progress",
+        "dev": "node color && webpack-dev-server",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "xiaminxi",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-import": "^1.12.2",
+        "babel-plugin-transform-decorators-legacy": "^1.3.5",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-preset-stage-3": "^6.24.1",
+        "classnames": "^2.2.6",
+        "clean-webpack-plugin": "^3.0.0",
+        "css-loader": "^3.2.0",
+        "html-webpack-plugin": "^3.2.0",
+        "less": "^3.0.4",
+        "less-loader": "^4.1.0",
+        "react-container-query": "^0.11.0",
+        "react-document-title": "^2.0.3",
+        "serialize-javascript": "^2.1.2",
+        "style-loader": "^1.0.0",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0"
+    },
+    "dependencies": {
+        "antd": "^3.25.1",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0",
+        "react-router": "^5.1.2",
+        "antd-theme-generator": "^1.1.7"
+    }
+}
