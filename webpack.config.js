@@ -2,8 +2,8 @@
  * @Author: 夏民喜
  * @Date: 2019-11-13 20:38:41
  * @LastEditors: 夏民喜
- * @LastEditTime: 2019-12-03 12:01:44
- * @Description: 请输入文件说明
+ * @LastEditTime: 2019-12-16 13:49:40
+ * @Description: webpack配置文件
  */
 const path = require("path")
 // 指定模板 生成index.html
