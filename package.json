@@ -4,13 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start:dev": "node color && cross-env NODE_ENV=dev webpack-dev-server",
-        "start:test": "node color && cross-env NODE_ENV=test webpack-dev-server",
-        "start:prod": "node color && cross-env NODE_ENV=prod webpack-dev-server",
+        "dev": "node color && cross-env NODE_ENV=dev webpack-dev-server",
+        "test": "node color && cross-env NODE_ENV=test webpack-dev-server",
+        "prod": "node color && cross-env NODE_ENV=prod webpack-dev-server",
         "build:dev": "node color && cross-env NODE_ENV=dev webpack --progress",
         "build:test": "node color && cross-env NODE_ENV=test webpack --progress",
         "build:prod": "node color && cross-env NODE_ENV=prod webpack --progress",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "componentTest": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "xiaminxi",
